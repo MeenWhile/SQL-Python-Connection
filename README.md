@@ -86,3 +86,39 @@
 ซึ่งเมื่อใส่ product_id ของ data ที่ต้องการจะลบแล้ว โปรแกรมก็จะแสดงข้อมูลของ data ที่ต้องการลบเพื่อให้ user สามารถตรวจสอบได้ว่า data ที่จะลบนั้น ถูกต้องหรือไม่ โดยถ้าถูกต้องแล้ว user สามารถใส่ Y เพื่อยืนยันการ delete data
 
 ![image](https://github.com/MeenWhile/SQL-Python-Connection/assets/125643589/afc627e6-1305-4d00-8055-e6a63b15f6d8)
+
+### 5. Analytic
+
+![image](https://github.com/MeenWhile/SQL-Python-Connection/assets/125643589/b8fcc54c-17cf-42e3-a6a4-aae9c2d9bfa2)
+
+ต่อไปเป็นส่วนที่ 5 Analytic ซึ่งในส่วนนี้เราจะนำ recommend data analytic ที่ user มีโอกาสใช้งานสูงมารวมกันเพื่อให้สะดวกต่อการวิเคราะห์ข้อมูล โดยปัจจุบันเราได้นำเสนอ 5 อันดับ max-min likes_count, 5 อันดับ max-min price, 5 อันดับ max-min discount ไว้ แต่ก็สามารถเพิ่มเติม recommend data analytic อื่น ๆ ได้ในภายหลัง
+
+![image](https://github.com/MeenWhile/SQL-Python-Connection/assets/125643589/3fcc08cc-7c46-4aa3-9ea0-2727c0031928)
+![image](https://github.com/MeenWhile/SQL-Python-Connection/assets/125643589/c73a1626-b910-4a88-b886-8dd0b41b9978)
+
+### 6. Insight
+
+![image](https://github.com/MeenWhile/SQL-Python-Connection/assets/125643589/16fed22d-a330-4b08-8830-7d0f3dc3d42e)
+![image](https://github.com/MeenWhile/SQL-Python-Connection/assets/125643589/da24249a-19e7-4ad5-bb2f-d1c07df0533d)
+
+สุดท้ายคือส่วนที่ 6 Insight ซึ่งในส่วนสุดท้ายนี้ จะเป็นการนำเสนอ insight ของ data ชุดนี้จากมุมมองของสมาชิกในกลุ่มแต่ละคน โดย insight ส่วนของผมนั้น คือ insight ส่วนที่ 2
+
+#### 6.1 Max Likes vs Subcategory
+
+![image](https://github.com/MeenWhile/SQL-Python-Connection/assets/125643589/45436170-8202-4e16-ad78-d3d6b5b69a11)
+
+insight ในส่วนนี้เป็นการมองยอดไลก์เทียบกับ subcategory ของสินค้า เพื่อดูว่าสินค้าใหม่ที่เราจะนำมาขายนั้น ควรเป็นสินค้าประเภทไหน โดย subcategory ที่มีคนกดไลก์เยอะที่สุดนั้นคือ sub043 ซึ่งมีคนกดไลก์มากถึง 6962 ไลก์
+
+#### 6.2 Like_Count and Discount Analytic
+
+![image](https://github.com/MeenWhile/SQL-Python-Connection/assets/125643589/2c637d40-e988-4f7e-9a74-8b574fbc913b)
+
+insight ในส่วนที่ 2 ผมได้ได้นำเสนอสินค้าที่มี Likes_Count 5 อันดับสูงสุดใน "หมวดหมู่สินค้าเก่า" และนำเสนอสินค้าที่มี Likes_Count 3 อันดับสูงสุดใน "หมวดหมู่สินค้าใหม่" โดยมองว่าสินค้าที่มี Likes_Count 5 อันดับสูงสุดใน "หมวดหมู่สินค้าเก่า" นั้น เรามีฐานลูกค้าที่ค่อนข้างสูงแล้ว เพราะฉะนั้นเราจึงควรลด discount ลงเพื่อเพิ่มกำไรต่อชิ้นของสินค้านั้น
+
+กลับกัน สินค้าที่มี Likes_Count 3 อันดับสูงสุดใน "หมวดหมู่สินค้าใหม่" นั้น เราควรเพิ่ม discount ขึ้นเพื่อกระตุ้นให้สินค้าชิ้นนั้นติดตลาด
+
+### 6.3 Max Likes VS Country
+
+![image](https://github.com/MeenWhile/SQL-Python-Connection/assets/125643589/6db2ce03-e2b0-45bd-ac82-716203f752be)
+
+insight ส่วนสุดท้ายเป็นการมองยอดไลก์เทียบกับประเทศที่สินค้านั้นวางขาย โดยมองว่าสินค้ายอดนิยม 5 อันดับสูงสุดนั้น สินค้าบางชิ้นวางขายเพียงแค่ 3 ประเทศ ถ้าเรานำสินค้ายอดนิยมเหล่านั้นไปวางขายในประเทศอื่น ๆ เพิ่มเติม จะสามารถเพิ่มยอดขายให้สินค้านั้น ๆ ได้ง่ายขึ้น
